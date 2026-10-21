@@ -1,0 +1,1492 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <title>Proxim Defence — modułowa ochrona antydronowa | Polish anti-drone system</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Proxim Defence — modułowy system pasywnej ochrony antydronowej dla szlaków komunikacyjnych, baz wojskowych i infrastruktury krytycznej. Polish anti-drone system." />
+
+  <!-- TODO: podmień na właściwy obrazek systemu (Open Graph) -->
+  <meta property="og:title" content="Proxim Defence — modułowa ochrona antydronowa" />
+  <meta property="og:description" content="Modular passive anti-drone protection system. Lekki system. Ciężka ochrona." />
+  <meta property="og:image" content="URL_DO_WIZUALIZACJI_SYSTEMU.jpg" />
+  <meta property="og:type" content="website" />
+
+  <style>
+    :root {
+      --bg-main: #F2EFE6;
+      --text-main: #1F2520;
+      --accent-primary: #2F3E2A;
+      --accent-cta: #C8841F;
+      --accent-secondary: #C4B58A;
+      --max-width: 1200px;
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: var(--bg-main);
+      color: var(--text-main);
+      line-height: 1.5;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .wrapper {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 16px;
+    }
+
+    header {
+      border-bottom: 1px solid var(--accent-secondary);
+      background: rgba(242, 239, 230, 0.96);
+      backdrop-filter: blur(6px);
+      position: sticky;
+      top: 0;
+      z-index: 20;
+    }
+
+    .top-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 12px 0;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+    }
+
+    .logo img {
+      height: 50px;
+      width: auto;
+    }
+
+    nav ul {
+      display: flex;
+      gap: 24px;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      font-size: 0.95rem;
+    }
+
+    nav a {
+      text-transform: uppercase;
+      font-weight: 600;
+      font-size: 0.85rem;
+      letter-spacing: 0.08em;
+      border-bottom: 2px solid transparent;
+      padding-bottom: 2px;
+    }
+
+    nav a:hover,
+    nav a:focus {
+      border-color: var(--accent-secondary);
+      text-decoration: none;
+    }
+
+    .lang-switch {
+      display: flex;
+      gap: 8px;
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .lang-switch button {
+      border: 1px solid var(--accent-secondary);
+      background: transparent;
+      padding: 4px 8px;
+      cursor: pointer;
+      font-size: 0.8rem;
+    }
+
+    .lang-switch button.active {
+      border-color: var(--accent-primary);
+      background: var(--accent-primary);
+      color: #fff;
+    }
+
+    main {
+      padding-bottom: 48px;
+    }
+
+    section {
+      padding: 48px 0;
+    }
+
+    h1, h2, h3 {
+      font-family: "Russo One", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      margin-top: 0;
+    }
+
+    h1 {
+      font-size: clamp(2rem, 4vw, 2.8rem);
+      margin-bottom: 12px;
+    }
+
+    h2 {
+      font-size: clamp(1.4rem, 3vw, 1.8rem);
+      margin-bottom: 24px;
+    }
+
+    h3 {
+      font-size: 1.05rem;
+      margin-bottom: 12px;
+    }
+
+    p {
+      margin-top: 0;
+      margin-bottom: 12px;
+    }
+
+    .hero {
+      min-height: 70vh;
+      position: relative;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      background-color: #2b2f28;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-image: url("URL_DO_WIZUALIZACJI_SYSTEMU.jpg"); /* TODO */
+    }
+
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(90deg, rgba(15, 20, 14, 0.9), rgba(15, 20, 14, 0.3));
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      padding: 48px 0;
+      max-width: 600px;
+    }
+
+    .hero-tagline {
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin-bottom: 16px;
+      color: #f5e1c0;
+    }
+
+    .hero-lead {
+      font-size: 0.98rem;
+      max-width: 540px;
+      margin-bottom: 24px;
+    }
+
+    .hero-cta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      padding: 10px 20px;
+      border-radius: 2px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      cursor: pointer;
+      border: none;
+    }
+
+    .btn-primary {
+      background: var(--accent-cta);
+      color: #fff;
+    }
+
+    .btn-primary:hover {
+      opacity: 0.9;
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: #fff;
+      border: 1px solid rgba(255, 255, 255, 0.7);
+    }
+
+    .btn-outline:hover {
+      background: rgba(0, 0, 0, 0.2);
+    }
+
+    .advantages {
+      background: var(--bg-main);
+      border-bottom: 1px solid var(--accent-secondary);
+    }
+
+    .adv-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .adv-item {
+      padding: 16px;
+      background: #fff;
+      border: 1px solid var(--accent-secondary);
+      text-align: center;
+      font-size: 0.9rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .how-it-works {
+      background: #fff;
+    }
+
+    .how-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 24px;
+      margin-bottom: 8px;
+    }
+
+    .how-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      font-size: 0.9rem;
+    }
+
+    .how-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 999px;
+      background: var(--accent-primary);
+      margin-bottom: 8px;
+    }
+
+    .link-small {
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .home-footer {
+      background: #fff;
+      border-top: 1px solid var(--accent-secondary);
+    }
+
+    .home-footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 24px;
+      align-items: center;
+    }
+
+    .home-footer-logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .home-footer-logo span {
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .card-grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 24px;
+    }
+
+    .card {
+      background: #fff;
+      border: 1px solid var(--accent-secondary);
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .card img {
+      border: 1px solid var(--accent-secondary);
+      background: #eee;
+    }
+
+    .card-footer-link {
+      margin-top: auto;
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .sys-visual {
+      border: 1px solid var(--accent-secondary);
+      background: #ddd;
+      height: 280px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .accordion {
+      border-top: 1px solid var(--accent-secondary);
+    }
+
+    .accordion-item {
+      border-bottom: 1px solid var(--accent-secondary);
+    }
+
+    .accordion-header {
+      cursor: pointer;
+      padding: 12px 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-weight: 600;
+      font-size: 0.95rem;
+    }
+
+    .accordion-body {
+      padding-bottom: 12px;
+      font-size: 0.9rem;
+    }
+
+    .sys-use-cases {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .sys-use-cases span {
+      padding: 6px 10px;
+      border-radius: 999px;
+      border: 1px solid var(--accent-secondary);
+      background: #fff;
+    }
+
+    .sys-cta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 24px;
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .stat-item {
+      padding: 16px;
+      background: #fff;
+      border: 1px solid var(--accent-secondary);
+      text-align: center;
+    }
+
+    .stat-value {
+      font-family: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+      font-size: 1.4rem;
+      margin-bottom: 4px;
+    }
+
+    .stat-label {
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .cert-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .cert-item {
+      background: #fff;
+      border: 1px solid var(--accent-secondary);
+      padding: 16px;
+      font-size: 0.85rem;
+    }
+
+    .cert-logo {
+      height: 40px;
+      width: 80px;
+      background: #e0e0e0;
+      margin-bottom: 8px;
+    }
+
+    .partner-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 2fr;
+      gap: 24px;
+      align-items: flex-start;
+    }
+
+    .partner-logo {
+      width: 160px;
+      height: 60px;
+      background: #2F3E2A;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .download-list {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .download-item {
+      background: #fff;
+      border: 1px solid var(--accent-secondary);
+      padding: 12px 16px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      font-size: 0.9rem;
+    }
+
+    .download-meta {
+      font-size: 0.8rem;
+      color: #555;
+    }
+
+    .download-btn {
+      padding: 8px 14px;
+      border-radius: 2px;
+      background: var(--accent-primary);
+      color: #fff;
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr);
+      gap: 32px;
+    }
+
+    .contact-block {
+      background: #fff;
+      border: 1px solid var(--accent-secondary);
+      padding: 16px;
+      font-size: 0.9rem;
+    }
+
+    .contact-label {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: #666;
+      margin-bottom: 4px;
+    }
+
+    .contact-form {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-top: 12px;
+    }
+
+    .field {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      font-size: 0.85rem;
+    }
+
+    .field label {
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .field input,
+    .field textarea {
+      padding: 8px 10px;
+      border-radius: 2px;
+      border: 1px solid var(--accent-secondary);
+      font-family: inherit;
+      font-size: 0.9rem;
+      background: #faf8f0;
+    }
+
+    .field textarea {
+      min-height: 120px;
+      resize: vertical;
+    }
+
+    .company-data {
+      font-size: 0.9rem;
+      line-height: 1.6;
+    }
+
+    .map-placeholder {
+      margin-top: 16px;
+      border: 1px solid var(--accent-secondary);
+    
+      background: #ddd;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    footer {
+      border-top: 1px solid var(--accent-secondary);
+      padding: 16px 0;
+      font-size: 0.8rem;
+    }
+
+    footer .wrapper {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 12px;
+    }
+
+    .page-section {
+      display: none;
+    }
+
+    .page-section.active {
+      display: block;
+    }
+
+    nav a.active-nav {
+      border-color: var(--accent-primary);
+      color: var(--accent-primary);
+    }
+
+    @media (max-width: 900px) {
+      nav ul {
+        gap: 12px;
+        font-size: 0.8rem;
+      }
+      .adv-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+      .card-grid-3 {
+        grid-template-columns: 1fr;
+      }
+      .stats-grid,
+      .cert-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+      .partner-grid {
+        grid-template-columns: 1fr;
+      }
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+      .home-footer-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .top-bar {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+      }
+      nav ul {
+        flex-wrap: wrap;
+      }
+      .hero {
+        min-height: 60vh;
+      }
+      .adv-grid {
+        grid-template-columns: 1fr;
+      }
+      .how-grid {
+        grid-template-columns: 1fr;
+      }
+      .stats-grid,
+      .cert-grid {
+        grid-template-columns: 1fr;
+      }
+      .sys-use-cases span {
+        font-size: 0.75rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="wrapper top-bar">
+    <div class="logo">
+      <!-- TODO: wstaw swoje logo -->
+      <img src="proxim_defence_logo.png" alt="Proxim Defence" />
+      <span>Proxim Defence</span>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="#home" data-nav="home"><span class="t" data-lang-pl="System" data-lang-en="System"></span></a></li>
+        <li><a href="#system" data-nav="system"><span class="t" data-lang-pl="Komponenty" data-lang-en="Components"></span></a></li>
+        <li><a href="#company" data-nav="company"><span class="t" data-lang-pl="Firma" data-lang-en="Company"></span></a></li>
+        <li><a href="#downloads" data-nav="downloads"><span class="t" data-lang-pl="Do pobrania" data-lang-en="Downloads"></span></a></li>
+        <li><a href="#contact" data-nav="contact"><span class="t" data-lang-pl="Kontakt" data-lang-en="Contact"></span></a></li>
+      </ul>
+    </nav>
+    <div class="lang-switch">
+      <button id="btn-pl" class="active">PL</button>
+      <button id="btn-en">EN</button>
+    </div>
+  </div>
+</header>
+
+<main>
+
+  <!-- HOME -->
+  <section id="home" class="page-section">
+    <div class="hero">
+      <div class="hero-overlay"></div>
+      <div class="wrapper">
+        <div class="hero-content">
+          <h1 class="t"
+              data-lang-pl="Modułowa ochrona antydronowa dla infrastruktury krytycznej"
+              data-lang-en="Modular anti-drone protection for critical infrastructure"></h1>
+
+          <div class="hero-tagline t"
+               data-lang-pl="Lekki system. Ciężka ochrona."
+               data-lang-en="Light system. Heavy protection."></div>
+
+          <p class="hero-lead t"
+             data-lang-pl="Proxim Defence projektuje i produkuje gotowe, mobilne systemy pasywnej ochrony antydronowej dla szlaków komunikacyjnych, baz wojskowych i obiektów infrastruktury krytycznej. System składa się z trzech komponentów: prefabrykowanego gwiazdobloku jako mobilnego fundamentu, składanego słupa kompozytowego oraz siatki technicznej rozpinanej nad i wokół chronionego korytarza. Bez prac ziemnych, bez betonowania, bez specjalistycznych maszyn montażowych."
+             data-lang-en="Proxim Defence designs and manufactures ready-to-deploy mobile passive anti-drone protection systems for transportation corridors, military bases and critical infrastructure facilities. The system consists of three components: a precast reinforced-concrete tetrapod serving as a mobile foundation, a foldable composite mast, and a technical net stretched above and around the protected corridor. No earthworks, no concreting, no specialized assembly equipment required."></p>
+
+          <div class="hero-cta">
+            <a href="ULOTKA_SYSTEMU_PL.pdf" class="btn btn-primary" target="_blank" rel="noopener">
+              <span class="t"
+                    data-lang-pl="Pobierz ulotkę PDF"
+                    data-lang-en="Download brochure (PDF)"></span>
+            </a>
+            <a href="#contact" class="btn btn-outline">
+              <span class="t"
+                    data-lang-pl="Umów rozmowę"
+                    data-lang-en="Schedule a call"></span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Pasek przewag -->
+    <section class="advantages">
+      <div class="wrapper">
+        <div class="adv-grid">
+          <div class="adv-item t"
+               data-lang-pl="System polski"
+               data-lang-en="Polish system"></div>
+          <div class="adv-item t"
+               data-lang-pl="Bez ciężkiego sprzętu"
+               data-lang-en="No heavy equipment"></div>
+          <div class="adv-item t"
+               data-lang-pl="Dual-use"
+               data-lang-en="Dual-use"></div>
+          <div class="adv-item t"
+               data-lang-pl="Skala przemysłowa"
+               data-lang-en="Industrial-scale capacity"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Jak działa system -->
+    <section class="how-it-works">
+      <div class="wrapper">
+        <h2 class="t"
+            data-lang-pl="Jak działa system"
+            data-lang-en="How the system works"></h2>
+        <div class="how-grid">
+          <div class="how-item">
+            <div class="how-icon"></div>
+            <div class="t"
+                 data-lang-pl="Gwiazdoblok stawia HDS"
+                 data-lang-en="Tetrapod placed by truck crane (HDS)"></div>
+          </div>
+          <div class="how-item">
+            <div class="how-icon"></div>
+            <div class="t"
+                 data-lang-pl="Słup składa się ręcznie"
+                 data-lang-en="Mast assembled manually"></div>
+          </div>
+          <div class="how-item">
+            <div class="how-icon"></div>
+            <div class="t"
+                 data-lang-pl="Siatka rozpina się jak żagiel"
+                 data-lang-en="Net tensioned like a sail"></div>
+          </div>
+        </div>
+        <a href="#system" data-nav="system" class="link-small">
+          <span class="t"
+                data-lang-pl="Zobacz szczegóły systemu →"
+                data-lang-en="View system details →"></span>
+        </a>
+      </div>
+    </section>
+
+    <!-- Stopka home -->
+    <section class="home-footer">
+      <div class="wrapper home-footer-grid">
+        <div>
+          <h3 class="t"
+              data-lang-pl="O firmie"
+              data-lang-en="About the company"></h3>
+          <p class="t"
+             data-lang-pl="Proxim Defence to spółka siostrzana firmy Proxim z Lublina — największego producenta tkanin technicznych w Polsce. Powstaliśmy, by ponad 14-letnie doświadczenie w produkcji wysoko-specjalistycznych tkanin technicznych przekuć na rozwiązania dual-use i odpowiedzieć na realne potrzeby sektora obronnego."
+             data-lang-en="Proxim Defence is a sister company of Proxim from Lublin — Poland's largest manufacturer of technical textiles. We were founded to translate over 20 years of expertise in highly specialized technical fabric production into dual-use solutions, answering the real needs of the defence sector."></p>
+          <a href="#company" data-nav="company" class="link-small">
+            <span class="t"
+                  data-lang-pl="Dowiedz się więcej →"
+                  data-lang-en="Learn more →"></span>
+          </a>
+        </div>
+        <div>
+          <div class="home-footer-logo">
+            <div style="background:#2F3E2A; color:#fff; padding:8px 12px; text-transform:uppercase; letter-spacing:0.08em; font-size:0.8rem;">
+              RCM Defence
+            </div>
+            <span class="t"
+                  data-lang-pl="Partner technologiczny — gwiazdoblok"
+                  data-lang-en="Technology partner — tetrapod"></span>
+          </div>
+          <!-- tu możesz wstawić zdjęcia gwiazdobloków -->
+        </div>
+      </div>
+    </section>
+  </section>
+
+  <!-- SYSTEM -->
+  <section id="system" class="page-section">
+    <div class="wrapper">
+      <h2 class="t"
+          data-lang-pl="System — założenia i komponenty"
+          data-lang-en="System — assumptions and components"></h2>
+
+      <!-- Założenia -->
+      <section>
+        <h3 class="t"
+            data-lang-pl="Założenia systemu"
+            data-lang-en="System assumptions"></h3>
+        <p class="t"
+           data-lang-pl="System Proxim Defence został zaprojektowany jako modułowa, pasywna ochrona antydronowa dla szlaków komunikacyjnych, baz wojskowych i obiektów infrastruktury krytycznej. Wykorzystuje prefabrykowane gwiazdobloki jako mobilne fundamenty pod słupy kompozytowe, na których rozpinana jest specjalistyczna siatka techniczna nad i wokół chronionego obszaru. System nie wymaga prac ziemnych ani betonowania, a do montażu nie są potrzebne specjalistyczne maszyny poza HDS do rozstawienia samych gwiazdobloków."
+           data-lang-en="The Proxim Defence system is designed as a modular passive anti-drone protection solution for transportation corridors, military bases and critical infrastructure facilities. It uses precast tetrapods as mobile foundations for composite masts, which support a technical net stretched above and around the protected area. The system requires no earthworks or concreting, and no specialized assembly machinery other than a truck crane (HDS) to position the tetrapods."></p>
+      </section>
+
+      <!-- Trzy komponenty -->
+      <section>
+        <h3 class="t"
+            data-lang-pl="Trzy komponenty systemu"
+            data-lang-en="Three system components"></h3>
+        <div class="card-grid-3">
+          <!-- Gwiazdoblok -->
+          <article class="card">
+            <img src="ChatGPT Image 28 maj 2026, 10_48_00.png" alt="Gwiazdoblok Dual-Use" />
+            <h4 class="t"
+                data-lang-pl="Gwiazdoblok „Dual-Use”"
+                data-lang-en="Tetrapod “Dual-Use”"></h4>
+            <p class="t"
+               data-lang-pl="Mobilny fundament żelbetowy z otworem technologicznym, objęty ochroną wzoru użytkowego. Wykonany przez RCM Defence — naszego partnera technologicznego."
+               data-lang-en="Mobile reinforced-concrete foundation with a technical opening, protected by a utility model. Manufactured by RCM Defence — our technology partner."></p>
+            <a href="KARTA_PRODUKTU_GWIAZDOBLOK.pdf" class="card-footer-link" target="_blank" rel="noopener">
+              <span class="t"
+                    data-lang-pl="Więcej → (karta produktu PDF)"
+                    data-lang-en="More → (product sheet PDF)"></span>
+            </a>
+          </article>
+
+          <!-- Słup GFR -->
+          <article class="card">
+            <img src="ChatGPT Image 28 maj 2026, 10_43_09.png" alt="Słup składany GFR" />
+            <h4 class="t"
+                data-lang-pl="Słup składany GFR"
+                data-lang-en="Foldable GFR mast"></h4>
+            <p class="t"
+               data-lang-pl="Lekka konstrukcja kompozytowa, składana z sekcji. Dwie wysokości do wyboru: 4 m lub 6 m. Montaż ręczny, bez ciężkiego sprzętu."
+               data-lang-en="Lightweight composite structure assembled from sections. Two heights available: 4 m and 6 m. Manual assembly, no heavy equipment required."></p>
+            <span class="card-footer-link t"
+                  data-lang-pl="Więcej → (karta techniczna w przygotowaniu)"
+                  data-lang-en="More → (technical datasheet in preparation)"></span>
+          </article>
+
+          <!-- Siatka -->
+          <article class="card">
+            <img src="wizualizacja system antydronowy siatki.png" alt="Siatka techniczna Proxim" />
+            <h4 class="t"
+                data-lang-pl="Siatka techniczna"
+                data-lang-en="Technical net"></h4>
+            <p class="t"
+               data-lang-pl="Tkanina techniczna produkcji Proxim. Dwie wersje — standardowa i fire-retardant — w kolorze NATO green."
+               data-lang-en="Technical textile manufactured by Proxim. Two versions — standard and fire-retardant — in NATO green."></p>
+            <span class="card-footer-link t"
+                  data-lang-pl="Więcej → (karty techniczne w przygotowaniu)"
+                  data-lang-en="More → (technical datasheets in preparation)"></span>
+          </article>
+        </div>
+      </section>
+
+      <!-- Wizualizacja -->
+      <section>
+        <h3 class="t"
+            data-lang-pl="Wizualizacja systemu"
+            data-lang-en="System visualization"></h3>
+        <div class="sys-visual">
+          <span class="t"
+                data-lang-pl="Wizualizacja systemu (siatka górna, siatka boczna, słup, gwiazdoblok)"
+                data-lang-en="System visualization (top net, side net, mast, tetrapod)"></span>
+        </div>
+      </section>
+
+      <!-- Specyfikacje -->
+      <section>
+        <h3 class="t"
+            data-lang-pl="Specyfikacje techniczne"
+            data-lang-en="Technical specifications"></h3>
+        <div class="accordion">
+          <!-- Siatka -->
+          <div class="accordion-item">
+            <div class="accordion-header">
+              <span class="t"
+                    data-lang-pl="Siatka techniczna — standard / fire-retardant"
+                    data-lang-en="Technical net — standard / fire-retardant"></span>
+              <span>▼</span>
+            </div>
+            <div class="accordion-body">
+              <p class="t"
+                 data-lang-pl="<strong>Parametry (przykład układu tabeli):</strong>"
+                 data-lang-en="<strong>Parameters (example table layout):</strong>"></p>
+              <ul>
+                <li class="t"
+                    data-lang-pl="Gramatura: … g/m² (standard) / … g/m² (FR)"
+                    data-lang-en="Weight: … g/m² (standard) / … g/m² (FR)"></li>
+                <li class="t"
+                    data-lang-pl="Oczko: … mm"
+                    data-lang-en="Mesh size: … mm"></li>
+                <li class="t"
+                    data-lang-pl="Klasa palności: …"
+                    data-lang-en="Fire classification: …"></li>
+                <li class="t"
+                    data-lang-pl="Temperatura pracy: … °C"
+                    data-lang-en="Operating temperature: … °C"></li>
+                <li class="t"
+                    data-lang-pl="Odporność UV: …"
+                    data-lang-en="UV resistance: …"></li>
+                <li class="t"
+                    data-lang-pl="Skuteczność: …"
+                    data-lang-en="Effectiveness: …"></li>
+                <li class="t"
+                    data-lang-pl="Kolor: NATO green"
+                    data-lang-en="Colour: NATO green"></li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Słup -->
+          <div class="accordion-item">
+            <div class="accordion-header">
+              <span class="t"
+                    data-lang-pl="Słup GFR"
+                    data-lang-en="GFR mast"></span>
+              <span>▼</span>
+            </div>
+            <div class="accordion-body">
+              <ul>
+                <li class="t"
+                    data-lang-pl="Wysokości: 4 m, 6 m"
+                    data-lang-en="Heights: 4 m, 6 m"></li>
+                <li class="t"
+                    data-lang-pl="Masa: … kg (w zależności od konfiguracji)"
+                    data-lang-en="Weight: … kg (depending on configuration)"></li>
+                <li class="t"
+                    data-lang-pl="Sekcje: modułowe, łączenie …"
+                    data-lang-en="Sections: modular, connection …"></li>
+                <li class="t"
+                    data-lang-pl="System łączenia: … (do uzupełnienia)"
+                    data-lang-en="Connection system: … (to be completed)"></li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Gwiazdoblok -->
+          <div class="accordion-item">
+            <div class="accordion-header">
+              <span class="t"
+                    data-lang-pl="Gwiazdoblok „Dual-Use”"
+                    data-lang-en="Tetrapod “Dual-Use”"></span>
+              <span>▼</span>
+            </div>
+            <div class="accordion-body">
+              <ul>
+                <li class="t"
+                    data-lang-pl="Wymiary: …"
+                    data-lang-en="Dimensions: …"></li>
+                <li class="t"
+                    data-lang-pl="Masa: … kg"
+                    data-lang-en="Weight: … kg"></li>
+                <li class="t"
+                    data-lang-pl="Otwór technologiczny: zintegrowany w ramieniu stożkowym"
+                    data-lang-en="Technical opening: integrated into conical arm"></li>
+                <li>
+                  <span class="t"
+                        data-lang-pl="Szczegóły:"
+                        data-lang-en="Details:"></span>
+                  <a href="KARTA_PRODUKTU_GWIAZDOBLOK.pdf" target="_blank" rel="noopener">
+                    <span class="t"
+                          data-lang-pl=" Karta produktu RCM Defence →"
+                          data-lang-en=" RCM Defence product sheet →"></span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Zastosowania -->
+      <section>
+        <h3 class="t"
+            data-lang-pl="Zastosowania"
+            data-lang-en="Applications"></h3>
+        <div class="sys-use-cases">
+          <span class="t"
+                data-lang-pl="Szlaki komunikacyjne"
+                data-lang-en="Transportation corridors"></span>
+          <span class="t"
+                data-lang-pl="Bazy wojskowe"
+                data-lang-en="Military bases"></span>
+          <span class="t"
+                data-lang-pl="Składy amunicji i paliw"
+                data-lang-en="Ammunition and fuel depots"></span>
+          <span class="t"
+                data-lang-pl="Stacje radarowe"
+                data-lang-en="Radar stations"></span>
+          <span class="t"
+                data-lang-pl="Podstacje energetyczne"
+                data-lang-en="Power substations"></span>
+          <span class="t"
+                data-lang-pl="Lotniska"
+                data-lang-en="Airfields"></span>
+          <span class="t"
+                data-lang-pl="Punkty dowodzenia"
+                data-lang-en="Command posts"></span>
+          <span class="t"
+                data-lang-pl="Infrastruktura krytyczna"
+                data-lang-en="Critical infrastructure"></span>
+        </div>
+      </section>
+
+      <!-- CTA -->
+      <section>
+        <div class="sys-cta">
+          <a href="ULOTKA_SYSTEMU_PL.pdf" class="btn btn-primary" target="_blank" rel="noopener">
+            <span class="t"
+                  data-lang-pl="Pobierz ulotkę systemu (PDF)"
+                  data-lang-en="Download system brochure (PDF)"></span>
+          </a>
+          <a href="#contact" data-nav="contact" class="btn btn-outline">
+            <span class="t"
+                  data-lang-pl="Zapytanie ofertowe →"
+                  data-lang-en="Request a quote →"></span>
+          </a>
+        </div>
+      </section>
+    </div>
+  </section>
+
+  <!-- FIRMA -->
+  <section id="company" class="page-section">
+    <div class="wrapper">
+      <h2 class="t"
+          data-lang-pl="Firma"
+          data-lang-en="Company"></h2>
+
+      <!-- Kim jesteśmy -->
+      <section>
+        <h3 class="t"
+            data-lang-pl="Kim jesteśmy"
+            data-lang-en="Who we are"></h3>
+        <p class="t"
+           data-lang-pl="Proxim Defence to spółka siostrzana firmy Proxim z Lublina — największego producenta tkanin technicznych w Polsce. Powstaliśmy, by ponad 14-letnie doświadczenie w produkcji wysoko-specjalistycznych tkanin technicznych przekuć na rozwiązania dual-use i odpowiedzieć na realne potrzeby sektora obronnego."
+           data-lang-en="Proxim Defence is a sister company of Proxim from Lublin — Poland's largest manufacturer of technical textiles. We were founded to translate over 20 years of expertise in highly specialized technical fabric production into dual-use solutions, answering the real needs of the defence sector."></p>
+      </section>
+
+      <!-- Liczby -->
+      <section>
+        <h3 class="t"
+            data-lang-pl="Liczby, które mają znaczenie"
+            data-lang-en="Numbers that matter"></h3>
+        <div class="stats-grid">
+          <div class="stat-item">
+            <div class="stat-value">14+</div>
+            <div class="stat-label t"
+                 data-lang-pl="lat doświadczenia w tkaninach technicznych"
+                 data-lang-en="years of experience in technical textiles"></div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-value">50 mln m²</div>
+            <div class="stat-label t"
+                 data-lang-pl="siatki technicznej rocznie"
+                 data-lang-en="of technical net produced annually"></div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-value">400</div>
+            <div class="stat-label t"
+                 data-lang-pl="gwiazdobloków dziennie — moc produkcyjna partnera"
+                 data-lang-en="tetrapods per day — partner capacity"></div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-value">100%</div>
+            <div class="stat-label t"
+                 data-lang-pl="produkcja w Polsce"
+                 data-lang-en="manufactured in Poland"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Jakość -->
+      <section>
+        <h3 class="t"
+            data-lang-pl="Jakość i certyfikacje"
+            data-lang-en="Quality and certifications"></h3>
+        <div class="cert-grid">
+          <div class="cert-item">
+            <div class="cert-logo"></div>
+            <strong>ISO 9001</strong><br />
+            <span class="t"
+                  data-lang-pl="międzynarodowe standardy zarządzania jakością"
+                  data-lang-en="international quality management standards"></span>
+          </div>
+          <div class="cert-item">
+            <div class="cert-logo"></div>
+            <strong>ISO 14001</strong><br />
+            <span class="t"
+                  data-lang-pl="najwyższe normy zarządzania środowiskowego"
+                  data-lang-en="top environmental management standards"></span>
+          </div>
+          <div class="cert-item">
+            <div class="cert-logo"></div>
+            <strong class="t"
+                    data-lang-pl="Certyfikat Zakładowej Kontroli Produkcji"
+                    data-lang-en="Factory Production Control Certificate"></strong><br />
+            <span class="t"
+                  data-lang-pl="kontrola na każdym etapie procesu"
+                  data-lang-en="control at every stage of the process"></span>
+          </div>
+          <div class="cert-item">
+            <div class="cert-logo"></div>
+            <strong class="t"
+                    data-lang-pl="Własne laboratorium"
+                    data-lang-en="In-house laboratory"></strong><br />
+            <span class="t"
+                  data-lang-pl="badania od surowca przez półprodukt po wyrób gotowy"
+                  data-lang-en="testing from raw material to finished product"></span>
+          </div>
+        </div>
+      </section>
+
+      <!-- Park maszynowy -->
+      <section>
+        <h3 class="t"
+            data-lang-pl="Park maszynowy i surowce"
+            data-lang-en="Machinery park and raw materials"></h3>
+        <p class="t"
+           data-lang-pl="Nasze linie produkcyjne to nowoczesny park maszynowy zaprojektowany i zbudowany pod wyspecjalizowaną produkcję, systematycznie modernizowany przez naszych pracowników. Bazujemy na surowcach najwyższej jakości od skrupulatnie wyselekcjonowanych dostawców, którzy współpracują z nami latami — co gwarantuje niezmienność właściwości każdej partii."
+           data-lang-en="Our production lines are a modern machinery park designed and built for specialized manufacturing and systematically upgraded by our team. We rely on top-quality raw materials from carefully selected suppliers who have been working with us for years, ensuring consistent properties of every batch."></p>
+      </section>
+
+      <!-- Partner RCM -->
+      <section>
+        <h3 class="t"
+            data-lang-pl="Partner technologiczny: RCM Defence"
+            data-lang-en="Technology partner: RCM Defence"></h3>
+        <div class="partner-grid">
+          <div>
+            <div class="partner-logo">RCM Defence</div>
+          </div>
+          <div>
+            <p class="t"
+               data-lang-pl="„Gwiazdoblok „Dual-Use&quot; — kluczowy komponent systemu — produkuje nasz partner technologiczny RCM Defence. Jest to autorskie rozwiązanie objęte ochroną wzoru użytkowego, zaprojektowane jako uniwersalny element inżynieryjny dla wojska, służb i infrastruktury krytycznej. Zintegrowany otwór technologiczny w ramieniu stożkowym zmienia tradycyjnego „jeża betonowego&quot; w mobilny fundament pod systemy obrony powietrznej krótkiego zasięgu — odpowiedź na potrzeby obserwowane na współczesnym polu walki, w tym bezpośrednio na froncie ukraińskim."
+               data-lang-en="The “Dual-Use” tetrapod — a key component of the system — is manufactured by our technology partner RCM Defence. It is a proprietary solution protected by a utility model, designed as a universal engineering element for the military, services and critical infrastructure. Its integrated technical opening in the conical arm transforms the traditional concrete ‘hedgehog’ into a mobile foundation for short-range air defence systems — a direct response to the needs observed on the modern battlefield, including the Ukrainian front."></p>
+            <p>
+              <a href="https://rcmc.pl/rcm-defence/" target="_blank" rel="noopener" class="link-small">
+                <span class="t"
+                      data-lang-pl="rcmc.pl/rcm-defence →"
+                      data-lang-en="rcmc.pl/rcm-defence →"></span>
+              </a>
+            </p>
+          </div>
+        </div>
+      </section>
+    </div>
+  </section>
+
+  <!-- DOWNLOADS -->
+  <section id="downloads" class="page-section">
+    <div class="wrapper">
+      <h2 class="t"
+          data-lang-pl="Do pobrania"
+          data-lang-en="Downloads"></h2>
+
+      <div class="download-list">
+        <div class="download-item">
+          <div>
+            <strong class="t"
+                    data-lang-pl="Ulotka systemu — 3 strony (PL)"
+                    data-lang-en="System brochure — 3 pages (PL)"></strong><br />
+            <span class="download-meta t"
+                  data-lang-pl="PDF • 1.2 MB • aktualizacja: 2024-06-01"
+                  data-lang-en="PDF • 1.2 MB • updated: 2024-06-01"></span>
+          </div>
+          <a href="ULOTKA_SYSTEMU_PL.pdf" class="download-btn" target="_blank" rel="noopener">
+            <span class="t"
+                  data-lang-pl="Pobierz"
+                  data-lang-en="Download"></span>
+          </a>
+        </div>
+
+        <div class="download-item">
+          <div>
+            <strong class="t"
+                    data-lang-pl="Ulotka systemu — 3 strony (EN)"
+                    data-lang-en="System brochure — 3 pages (EN)"></strong><br />
+            <span class="download-meta t"
+                  data-lang-pl="PDF • 1.2 MB • aktualizacja: 2024-06-01"
+                  data-lang-en="PDF • 1.2 MB • updated: 2024-06-01"></span>
+          </div>
+          <a href="ULOTKA_SYSTEMU_EN.pdf" class="download-btn" target="_blank" rel="noopener">
+            <span class="t"
+                  data-lang-pl="Pobierz"
+                  data-lang-en="Download"></span>
+          </a>
+        </div>
+
+        <div class="download-item">
+          <div>
+            <strong class="t"
+                    data-lang-pl="Karta techniczna: siatka standardowa"
+                    data-lang-en="Technical datasheet: standard net"></strong><br />
+            <span class="download-meta t"
+                  data-lang-pl="PDF • do uzupełnienia po finalizacji"
+                  data-lang-en="PDF • to be added after finalization"></span>
+          </div>
+          <a href="#" class="download-btn" style="opacity:0.6; pointer-events:none;">
+            <span class="t"
+                  data-lang-pl="Wkrótce"
+                  data-lang-en="Coming soon"></span>
+          </a>
+        </div>
+
+        <div class="download-item">
+          <div>
+            <strong class="t"
+                    data-lang-pl="Karta techniczna: siatka fire-retardant"
+                    data-lang-en="Technical datasheet: fire-retardant net"></strong><br />
+            <span class="download-meta t"
+                  data-lang-pl="PDF • do uzupełnienia po finalizacji"
+                  data-lang-en="PDF • to be added after finalization"></span>
+          </div>
+          <a href="#" class="download-btn" style="opacity:0.6; pointer-events:none;">
+            <span class="t"
+                  data-lang-pl="Wkrótce"
+                  data-lang-en="Coming soon"></span>
+          </a>
+        </div>
+
+        <div class="download-item">
+          <div>
+            <strong class="t"
+                    data-lang-pl="Karta techniczna: słup GFR"
+                    data-lang-en="Technical datasheet: GFR mast"></strong><br />
+            <span class="download-meta t"
+                  data-lang-pl="PDF • do uzupełnienia"
+                  data-lang-en="PDF • to be added"></span>
+          </div>
+          <a href="#" class="download-btn" style="opacity:0.6; pointer-events:none;">
+            <span class="t"
+                  data-lang-pl="Wkrótce"
+                  data-lang-en="Coming soon"></span>
+          </a>
+        </div>
+
+        <div class="download-item">
+          <div>
+            <strong class="t"
+                    data-lang-pl="Karta produktu: gwiazdoblok „Dual-Use&quot; (RCM Defence)"
+                    data-lang-en="Product sheet: “Dual-Use” tetrapod (RCM Defence)"></strong><br />
+            <span class="download-meta t"
+                  data-lang-pl="PDF • rozmiar i data wg RCM Defence"
+                  data-lang-en="PDF • size and date per RCM Defence"></span>
+          </div>
+          <a href="KARTA_PRODUKTU_GWIAZDOBLOK.pdf" class="download-btn" target="_blank" rel="noopener">
+            <span class="t"
+                  data-lang-pl="Pobierz"
+                  data-lang-en="Download"></span>
+          </a>
+        </div>
+
+        <div class="download-item">
+          <div>
+            <strong class="t"
+                    data-lang-pl="Certyfikaty ISO 9001 / 14001"
+                    data-lang-en="ISO 9001 / 14001 certificates"></strong><br />
+            <span class="download-meta t"
+                  data-lang-pl="PDF • skany"
+                  data-lang-en="PDF • scans"></span>
+          </div>
+          <a href="CERTYFIKATY_ISO.pdf" class="download-btn" target="_blank" rel="noopener">
+            <span class="t"
+                  data-lang-pl="Pobierz"
+                  data-lang-en="Download"></span>
+          </a>
+        </div>
+      </div>
+
+      <section style="margin-top:32px;">
+        <p class="t"
+           data-lang-pl="Potrzebujesz innych materiałów (np. pod NDA)? Napisz do nas:"
+           data-lang-en="Need other materials (e.g. under NDA)? Contact us:"></p>
+        <a href="#contact" data-nav="contact" class="link-small">
+          <span class="t"
+                data-lang-pl="formularz kontaktowy →"
+                data-lang-en="contact form →"></span>
+        </a>
+      </section>
+    </div>
+  </section>
+
+  <!-- KONTAKT -->
+  <section id="contact" class="page-section">
+    <div class="wrapper">
+      <h2 class="t"
+          data-lang-pl="Kontakt"
+          data-lang-en="Contact"></h2>
+
+      <div class="contact-grid">
+        <div>
+          <div class="contact-block">
+            <div class="contact-label t"
+                 data-lang-pl="Zapytania handlowe"
+                 data-lang-en="Sales enquiries"></div>
+            <!-- TODO: uzupełnij danymi -->
+            <p>
+              <strong>Imię i nazwisko</strong><br />
+              <span class="t"
+                    data-lang-pl="Stanowisko"
+                    data-lang-en="Position"></span><br />
+              tel. +48 …<br />
+              e-mail: …@proximdefence.pl
+            </p>
+          </div>
+
+          <div class="contact-block" style="margin-top:16px;">
+            <div class="contact-label t"
+                 data-lang-pl="Zapytania techniczne"
+                 data-lang-en="Technical enquiries"></div>
+            <p>
+              <strong>Imię i nazwisko</strong><br />
+              <span class="t"
+                    data-lang-pl="Stanowisko / dział rozwoju"
+                    data-lang-en="Position / R&D department"></span><br />
+              tel. +48 …<br />
+              e-mail: …@proximdefence.pl
+            </p>
+          </div>
+
+          <div class="contact-block" style="margin-top:16px;">
+            <div class="contact-label t"
+                 data-lang-pl="Formularz kontaktowy"
+                 data-lang-en="Contact form"></div>
+            <form class="contact-form" action="https://formspree.io/f/TWÓJ_ID" method="POST">
+              <div class="field">
+                <label for="name" class="t"
+                       data-lang-pl="Imię i nazwisko"
+                       data-lang-en="Name and surname"></label>
+                <input type="text" id="name" name="name" required />
+              </div>
+              <div class="field">
+                <label for="email" class="t"
+                       data-lang-pl="E-mail"
+                       data-lang-en="E-mail"></label>
+                <input type="email" id="email" name="_replyto" required />
+              </div>
+              <div class="field">
+                <label for="org" class="t"
+                       data-lang-pl="Organizacja"
+                       data-lang-en="Organization"></label>
+                <input type="text" id="org" name="organization" />
+              </div>
+              <div class="field">
+                <label for="msg" class="t"
+                       data-lang-pl="Treść"
+                       data-lang-en="Message"></label>
+                <textarea id="msg" name="message" required></textarea>
+              </div>
+              <button type="submit" class="btn btn-primary">
+                <span class="t"
+                      data-lang-pl="Wyślij"
+                      data-lang-en="Send"></span>
+              </button>
+            </form>
+          </div>
+        </div>
+
+        <div>
+          <div class="contact-block">
+            <div class="contact-label t"
+                 data-lang-pl="Dane firmy"
+                 data-lang-en="Company details"></div>
+            <div class="company-data">
+              PROXIM DEFENCE SP. Z O.O.<br />
+              ul. Tomasza Zana 11A<br />
+              20-601 Lublin, Polska<br /><br />
+              KRS: 0001241408<br />
+              NIP: 7123512824<br />
+              REGON: 544764934
+            </div>
+            <div class="map-placeholder" style="padding:0;">
+             <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2491.4112537036667!2d22.552943176918202!3d51.35873592155251!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47225b2b78688cbb%3A0x6291dfbcf7cd5d96!2sPROXIM!5e0!3m2!1spl!2spl!4v1780389483832!5m2!1spl!2spl" 
+             width="600" 
+             height="450" 
+             style="border:0;" 
+             allowfullscreen="" 
+             loading="lazy" 
+             referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrapper">
+    <div>
+      © <span id="year"></span> Proxim Defence Sp. z o.o.
+      <span class="t"
+            data-lang-pl="Wszelkie prawa zastrzeżone."
+            data-lang-en="All rights reserved."></span>
+    </div>
+    <div>
+      <span class="t"
+            data-lang-pl="Pełne dane rejestrowe • Polityka prywatności • RODO"
+            data-lang-en="Full company details • Privacy policy • GDPR"></span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Rok w stopce
+  document.getElementById("year").textContent = new Date().getFullYear();
+
+  // Proste przełączanie sekcji
+  function showSection(id) {
+    document.querySelectorAll(".page-section").forEach(s => s.classList.remove("active"));
+    var el = document.getElementById(id);
+    if (el) el.classList.add("active");
+  }
+
+  document.addEventListener("DOMContentLoaded", function () {
+    document.querySelectorAll("[data-nav]").forEach(link => {
+      link.addEventListener("click", function (e) {
+        e.preventDefault();
+        const target = this.getAttribute("data-nav");
+        showSection(target);
+        document.querySelectorAll("nav a").forEach(a => a.classList.remove("active-nav"));
+        this.classList.add("active-nav");
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      });
+    });
+
+    // startowe: home + PL
+    showSection("home");
+    document.querySelector('nav a[data-nav="home"]').classList.add("active-nav");
+    applyLanguage("pl");
+  });
+
+  // Przełączanie języka na podstawie atrybutów data-lang-pl / data-lang-en
+  function applyLanguage(lang) {
+    document.querySelectorAll(".t").forEach(function (el) {
+      var text = el.getAttribute("data-lang-" + lang);
+      if (text !== null) {
+        // jeśli tekst zawiera HTML (np. <strong>), wstawiamy jako HTML
+        if (text.indexOf("<") !== -1) {
+          el.innerHTML = text;
+        } else {
+          el.textContent = text;
+        }
+      }
+    });
+
+    // podświetlenie przycisków
+    document.getElementById("btn-pl").classList.toggle("active", lang === "pl");
+    document.getElementById("btn-en").classList.toggle("active", lang === "en");
+
+    // aktualizacja lang w <html> (dla SEO / accessibility)
+    document.documentElement.lang = lang === "pl" ? "pl" : "en";
+  }
+
+  document.getElementById("btn-pl").addEventListener("click", function () {
+    applyLanguage("pl");
+  });
+
+  document.getElementById("btn-en").addEventListener("click", function () {
+    applyLanguage("en");
+  });
+</script>
+
+</body>
+</html>
